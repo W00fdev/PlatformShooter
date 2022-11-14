@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (inputDirection.sqrMagnitude > 0.01f)
         {
-            //Трансформируем экранныые координаты вектора в мировые
+            //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             movementVector = Camera.main.transform.TransformDirection(inputDirection);
             movementVector.y = 0;
         }
