@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
         _wishedDirection = TranslateCameraDirection(GetInputVector());
 
-        if (CharacterController.isGrounded)
+        if (IsGrounded == true)
         {
             _wishedJump = _inputService.GetJumpButton(); 
 
@@ -60,13 +60,22 @@ public class PlayerMovement : MonoBehaviour
             AirMove(_wishedDirection);
         }
 
-        MovePlayer(_playerVelocity * _speed);
+        if (_playerVelocity.magnitude > Mathf.Epsilon)
+            MovePlayer(_playerVelocity * _speed);
     }
 
     private Vector3 TranslateCameraDirection(Vector3 inputVector)
     {
         if (inputVector != Vector3.zero)
             inputVector = Camera.main.transform.TransformDirection(inputVector);
+
+        return inputVector;
+    }
+
+    private Vector3 TranslatePlayerDirection(Vector3 inputVector)
+    {
+        if (inputVector != Vector3.zero)
+            inputVector = transform.TransformDirection(inputVector);
 
         return inputVector;
     }
@@ -115,14 +124,13 @@ public class PlayerMovement : MonoBehaviour
 
         _playerVelocity = Vector3.Lerp(_playerVelocity, wishedDirection * (1f + Mathf.Abs(_acceleration)),
             controlMovement * Time.deltaTime);
-
-
         _playerVelocity.y = 0f;
+
         _playerVelocity = Vector3.ClampMagnitude(_playerVelocity, _maxVelocityMagnitude);
         _animationVelocity = _playerVelocity;
 
         RotatePlayerTowardMovement();
-        UpdateAnimationsIfExist(playerVelocityXZ: _playerVelocity);
+        UpdateAnimationsIfExist(playerVelocityXZ: _animationVelocity);
 
         _playerVelocity.y = prevVelocityY;
     }
@@ -150,8 +158,8 @@ public class PlayerMovement : MonoBehaviour
             _animationVelocity.z = _playerVelocity.z;
         }
 
-        _animationVelocity.x *= Mathf.Clamp(_playerVelocity.x, _maxDropAnimationAcceleration, _acceleration);
-        _animationVelocity.z *= Mathf.Clamp(_playerVelocity.z, _maxDropAnimationAcceleration, _acceleration);
+        _animationVelocity.x *= Mathf.Clamp(_acceleration, _maxDropAnimationAcceleration, _acceleration);
+        _animationVelocity.z *= Mathf.Clamp(_acceleration, _maxDropAnimationAcceleration, _acceleration);
     }
 
     private void UpdateAnimationsIfExist(Vector3 playerVelocityXZ)

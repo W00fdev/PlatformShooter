@@ -26,6 +26,14 @@ public class PlayerAnimations : MonoBehaviour
     {
         playerVelocity.y = 0;
 
+        if (playerVelocity.magnitude <= Mathf.Epsilon)
+        {
+            _animator.SetFloat(_axisXHash, 0f);
+            _animator.SetFloat(_axisZHash, 0f);
+
+            return;
+        }
+
         _animator.SetFloat(_axisXHash, playerVelocity.x / _maxVelocityMagnitude);
         _animator.SetFloat(_axisZHash, playerVelocity.z / _maxVelocityMagnitude);
     }
