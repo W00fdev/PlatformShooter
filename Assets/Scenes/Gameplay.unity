@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2579691, g: 0.021953017, b: 0.02787799, a: 1}
+  m_IndirectSpecularColor: {r: 0.2579691, g: 0.021953017, b: 0.027877983, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -10968,7 +10968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterController: {fileID: 3509622017719993256}
   _speed: 7
-  _jumpHeight: 5
+  _jumpHeight: 1
   _airControl: 1
   _maxAcceleration: 0.4
   _maxVelocityMagnitude: 1.4
@@ -11079,6 +11079,7 @@ GameObject:
   - component: {fileID: 7993339615474681457}
   - component: {fileID: 3509622017719993256}
   - component: {fileID: 7993339615474681459}
+  - component: {fileID: 7993339615474681460}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -12571,6 +12572,20 @@ MonoBehaviour:
   _ignoredLayers:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &7993339615474681460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3694623499770431153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc3990d8339f5b4fbe8d0cbf69d20ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _axisXName: X
+  _axisZName: Z
 --- !u!4 &8025553739177825722
 Transform:
   m_ObjectHideFlags: 0
