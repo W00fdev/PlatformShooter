@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 795432212981103893, guid: d0760a66a63a36740b36de46ef865962, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 952222353070438584, guid: d0760a66a63a36740b36de46ef865962, type: 3}
       propertyPath: m_Camera
       value: 
@@ -75,7 +79,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3950575621025500279}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -84,7 +88,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 3.7
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 2300000}
   - component: {fileID: 3665739258830221639}
   - component: {fileID: 7754250638473651621}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Environment_Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &400000
 Transform:
@@ -96,8 +96,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.99999, y: 0.19479579, z: 2.872505}
-  m_Center: {x: -2.499995, y: -0.09739789, z: -1.4362525}
+  m_Size: {x: 4.99999, y: 0.32763958, z: 2.8663497}
+  m_Center: {x: -2.499995, y: -0.16381979, z: -1.4331748}
 --- !u!65 &7754250638473651621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -109,5 +109,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.99999, y: 0.12467861, z: 7.142132}
-  m_Center: {x: -2.499995, y: -0.26413476, z: -6.428934}
+  m_Size: {x: 4.99999, y: 0.12467849, z: 10.000398}
+  m_Center: {x: -2.499995, y: -0.26413482, z: -4.999801}
